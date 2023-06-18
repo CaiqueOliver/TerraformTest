@@ -1,10 +1,21 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
-variable "appId" {
-  description = "Azure Kubernetes Service Cluster service principal"
+variable "aks_name" {
+  type = string 
+  default =  "aks-test"
+  
 }
 
-variable "password" {
-  description = "Azure Kubernetes Service Cluster password"
+
+variable "tags" {
+   type = map(any)
+   default = {
+    "environment"     = "demo"
+    "organization"    = "test"
+    "project"         = "demo"
+    "terraform"       = true    
+    "version"         = "v2"
+    "tier"            = "container"   
+    "region"          = "eu2"
+    "region_full"     = "eastus2"
+    "location"        = "East US2"
+  }
 }
